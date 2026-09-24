@@ -1,25 +1,27 @@
-import LoginScreen from "@/src/components/screens/LoginScreen";
-import RegisterScreen from "@/src/components/screens/RegisterScreen";
+import LoginScreen from "@/src/screens/LoginScreen";
+import RegisterScreen from "@/src/screens/RegisterScreen";
 import { LinearGradient } from "expo-linear-gradient";
+import { useTheme } from "@/src/Context/ThemeContext";
 import Lottie from "lottie-react-native";
 import React, { useState } from "react";
 import {
-  KeyboardAvoidingView,
-  Platform,
-  ScrollView,
-  Text,
-  TouchableOpacity,
-  View,
+    KeyboardAvoidingView,
+    Platform,
+    ScrollView,
+    Text,
+    TouchableOpacity,
+    View,
 } from "react-native";
 
 const AuthScreen = () => {
   const [activeTab, setActiveTab] = useState("login");
   const isLogin = activeTab === "login";
+  const {colors} =useTheme();
   return (
     <View className="flex-1">
       <LinearGradient
-        colors={["#2ED398", "#72E0C4", "#56BCD0", "#2A82C6", "#0E4EA3"]}
-        locations={[0, 0.28, 0.55, 0.8, 1]}
+        colors={["#2D9B52", "#228B42", "#1B5E3B"]}
+        locations={[0, 0.45, 1]}
         start={{ x: 0.05, y: 0.15 }}
         end={{ x: 0.95, y: 0.95 }}
         style={{
@@ -40,7 +42,8 @@ const AuthScreen = () => {
           style={{ width: "90%", height: "90%" }}
         />
       </View>
-      <View className="flex-[6] bg-white px-4 rounded-t-[40px]">
+      <View className="flex-[6] px-4 rounded-t-[40px]" style={{backgroundColor: colors.surface}}>
+        
         <KeyboardAvoidingView
           behavior={"padding"}
           keyboardVerticalOffset={Platform.OS === "ios" ? 100 : 0}
@@ -59,7 +62,7 @@ const AuthScreen = () => {
               <TouchableOpacity
                 onPress={() => setActiveTab(isLogin ? "signup" : "login")}
               >
-                <Text className="text-green-500">
+                <Text style={{color: colors.primary}}>
                   {isLogin ? "Sign Up" : "Login"}
                 </Text>
               </TouchableOpacity>

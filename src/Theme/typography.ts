@@ -1,0 +1,21 @@
+export const typography = {
+  greeting: "text-xs font-semibold",
+  username: "text-[21px] font-bold tracking-tight",
+  hdrTitle: "text-[26px] font-extrabold tracking-tight",
+  hdrSub: "text-[12.5px] font-semibold",
+  cardLabel: "text-[11px] font-bold uppercase tracking-[1px]",
+  cardValue: "text-[28px] font-extrabold tracking-tight",
+  bigValue: "text=[38px] font-extrabold tracking-tighter",
+  sectionLabel: "text-[11px] font-bold uppercase tracking-[1px]",
+  className: "text-[14.5px] font-bold tracking-tight",
+  ClassMeta: "text-[12.5px] font-medium",
+  taskText: "text-[14.5px] font-bold tracking-tight",
+  taskMeta: "text-[12.5px] font-medium",
+  statNum: "text-[22px] font-extrabold tracking-tight",
+  statLbl: "text-[11.5px] font-semibold",
+  profileName: "text-[19px] font-bold tracking-tight",
+  settingLabel: "text-[14.5px] font-semibold",
+  settingMeta: "text-xs font-medium",
+  tag: "text-[11.5px] font-bold",
+  body: "text-[14px] leading-[22px]"
+} as const;

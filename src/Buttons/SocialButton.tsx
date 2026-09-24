@@ -1,3 +1,4 @@
+
 import React from "react";
 import {
     Image,
@@ -5,6 +6,7 @@ import {
     Text,
     TouchableOpacity
 } from "react-native";
+import { useTheme } from "../Context/ThemeContext";
 
 type SocialButtonProps = {
   title: string;
@@ -13,13 +15,15 @@ type SocialButtonProps = {
 };
 
 const SocialButton = ({ title, image, onPress }: SocialButtonProps) => {
+  const {colors} = useTheme()
   return (
     <TouchableOpacity
       onPress={onPress}
-      className="flex-row justify-center w-full px-4 py-4 border border-gray-300 rounded-full"
+      className="flex-row justify-center w-full px-4 py-4 border rounded-full"
+      style={{borderColor: colors.border}}
     >
       <Image source={image} className="w-10 h-6" resizeMode="contain" />
-      <Text className="text-base font-semibold ">SignIn with {title}</Text>
+      <Text className="text-base font-semibold " style={{color: colors.textPrimary}}>SignIn with {title}</Text>
     </TouchableOpacity>
   );
 };
